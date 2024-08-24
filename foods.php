@@ -1,3 +1,4 @@
+
     <?php include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
@@ -5,7 +6,7 @@
         <div class="container">
             
             <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search Foods...." required>
+                <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
 
@@ -13,19 +14,10 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
-    <?php 
-        if(isset($_SESSION['order']))
-        {
-            echo $_SESSION['order'];
-            unset($_SESSION['order']);
-        }
-    ?>
-
-    
 
 
-
-<section class="food-menu">
+    <!-- fOOD MEnu Section Starts Here -->
+    <section class="food-menu">
     <div class="container" style="padding: 20px 0;">
         <h2 class="text-center">Food Menu</h2>
 
@@ -51,7 +43,7 @@
                     $price = $row['price'];
                     $image_name = $row['image_name'];
                     ?>
-                    <div style="flex: 1 1 calc(50% - 20px); box-sizing: border-box;background-color:whitesmoke; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                    <div style="flex: 1 1 calc(50% - 20px); box-sizing: border-box; background-color:whitesmoke; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
                         <div class="food-menu-img">
                             <?php 
                                 // Check whether image available or not
@@ -86,10 +78,22 @@
                 echo "<div class='error'>Food not found.</div>";
             }
         ?>
+        <div class="clearfix"></div>
     </div>
 </section>
 
+
+            
+
+            
+
+            
+
+            
+
+        </div>
+
+    </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    
     <?php include('partials-front/footer.php'); ?>
